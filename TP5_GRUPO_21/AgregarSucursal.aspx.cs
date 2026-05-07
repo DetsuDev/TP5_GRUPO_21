@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace TP5_GRUPO_21
+{
+    public partial class AgregarSucursal : System.Web.UI.Page
+    {
+        private Conexion conexion = new Conexion();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                dpProvincias.DataSource = conexion.ObtenerTabla("SELECT * FROM Provincia");
+                dpProvincias.DataTextField = "DescripcionProvincia"; 
+                dpProvincias.DataValueField = "Id_Provincia"; 
+                dpProvincias.DataBind();
+            }
+        }
+    }
+
+}
