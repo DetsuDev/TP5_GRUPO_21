@@ -27,7 +27,16 @@ namespace TP5_GRUPO_21
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
             int filasAfectadas = conexion.EjecutarConsulta("INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) VALUES ('" + txtNombre.Text + "', '" + txtDescripcion.Text + "'," + dpProvincias.SelectedValue + ",'" + txtDireccion.Text + "')");
-            
+
+            if (filasAfectadas > 0)
+            {
+                lblMensaje.Text = "La sucursal se ha agregado con éxito";
+
+                txtNombre.Text = "";
+                txtDescripcion.Text = "";
+                txtDireccion.Text = "";
+                dpProvincias.SelectedIndex = 0;
+            }
         }
     }
 

@@ -17,7 +17,16 @@ namespace TP5_GRUPO_21
                 listaSucursales.DataSource = conexion.ObtenerTabla("SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal FROM Sucursal");
                 listaSucursales.DataBind();
             }
+        }
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtIdSucursal.Text))
+            {
+                string consulta = "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal FROM Sucursal WHERE Id_Sucursal = " + txtIdSucursal.Text;
 
+                listaSucursales.DataSource = conexion.ObtenerTabla(consulta);
+                listaSucursales.DataBind();
+            }
         }
     }
 }
