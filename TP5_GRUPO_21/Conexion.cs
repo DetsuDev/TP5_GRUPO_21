@@ -26,6 +26,17 @@ namespace TP5_GRUPO_21
         }
 
 
+        public int EjecutarConsulta(string consultaSQL)
+        {
+            SqlConnection sqlConnection = new SqlConnection(cadenaConexion);
+            sqlConnection.Open();
+            SqlCommand sqlCommand = new SqlCommand(consultaSQL, sqlConnection);
+            int filas = (int)sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+            return filas;
+        }
+
+
 
     }
 }

@@ -13,6 +13,8 @@ namespace TP5_GRUPO_21
         private Conexion conexion = new Conexion();
         protected void Page_Load(object sender, EventArgs e)
         {
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+
             if (!IsPostBack)
             {
                 dpProvincias.DataSource = conexion.ObtenerTabla("SELECT * FROM Provincia");
@@ -20,6 +22,12 @@ namespace TP5_GRUPO_21
                 dpProvincias.DataValueField = "Id_Provincia"; 
                 dpProvincias.DataBind();
             }
+        }
+        
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
+            int filasAfectadas = conexion.EjecutarConsulta("INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) VALUES ('" + txtNombre.Text + "', '" + txtDescripcion.Text + "'," + dpProvincias.SelectedValue + ",'" + txtDireccion.Text + "')");
+            
         }
     }
 
