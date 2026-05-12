@@ -28,5 +28,10 @@ namespace TP5_GRUPO_21
                 listaSucursales.DataBind();
             }
         }
+
+        protected void listaSucursales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -8,7 +8,6 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 144px;
         }
         .auto-style2 {
             width: 224px;
@@ -31,14 +30,35 @@
             height: 23px;
             width: 89px;
         }
+        .auto-style8 {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <h3>Eliminar Sucursal</h3>
-        </div>
-        <table style="width:100%;">
+            <table class="auto-style8">
+                <tr>
+                    <td style="text-align: center;">
+            <asp:HyperLink ID="hlAgregar" runat="server" NavigateUrl="AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
+                    </td>
+                    <td style="text-align: center;">
+            <asp:HyperLink ID="hlListado" runat="server" NavigateUrl="ListarSucursal.aspx">Listado de Sucursales</asp:HyperLink>
+                    </td>
+                    <td style="text-align: center;">
+            <asp:HyperLink ID="hlEliminar" runat="server" NavigateUrl="EliminarSucursal.aspx">Eliminar Sucursal</asp:HyperLink>
+                    </td>
+                </tr>
+            </table>
+    <table style="width:100%;">
+            <tr>
+                <td class="auto-style1" colspan="2" style="font-weight: bold; font-size: 20px;">Eliminar Sucursal</td>
+                <td class="auto-style6">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
             <tr>
                 <td class="auto-style1">Ingresar ID sucursal: </td>
                 <td class="auto-style2">
@@ -64,6 +84,8 @@
                 <td class="auto-style5">&nbsp;</td>
             </tr>
         </table>
+        </div>
+
     </form>
 </body>
 </html>
