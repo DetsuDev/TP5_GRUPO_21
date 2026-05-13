@@ -62,13 +62,16 @@
             <tr>
                 <td class="auto-style1">Ingresar ID sucursal: </td>
                 <td class="auto-style2">
-                    <asp:TextBox ID="txtIdsucursal" runat="server" Width="215px"></asp:TextBox>
+                    <asp:TextBox ID="txtIdEliminar" runat="server" Width="215px"></asp:TextBox>
                 </td>
                 <td class="auto-style6">
-                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" />
+                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
                 </td>
                 <td>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtIdsucursal" ErrorMessage="Ingrese solo numeros" ForeColor="Red" ValidationExpression="^[0-9,$]*$"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtIdEliminar" ErrorMessage="Ingrese solo numeros" ForeColor="Red" ValidationExpression="^[0-9,$]*$"></asp:RegularExpressionValidator>
+                </td>
+                <td>
+                    <asp:Label ID="lblMensajeEliminar" runat="server" Text=""></asp:Label>
                 </td>
             </tr>
             <tr>

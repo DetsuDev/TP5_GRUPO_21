@@ -26,6 +26,8 @@ namespace TP5_GRUPO_21
 
                 listaSucursales.DataSource = conexion.ObtenerTabla(consulta);
                 listaSucursales.DataBind();
+
+                txtIdSucursal.Text = "";
             }
         }
 
