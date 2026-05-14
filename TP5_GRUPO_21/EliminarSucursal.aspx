@@ -7,31 +7,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <style type="text/css">
-        .auto-style1 {
-        }
-        .auto-style2 {
-            width: 224px;
-        }
-        .auto-style3 {
-            width: 144px;
-            height: 23px;
-        }
-        .auto-style4 {
-            width: 224px;
-            height: 23px;
-        }
-        .auto-style5 {
-            height: 23px;
-        }
-        .auto-style6 {
-            width: 89px;
-        }
-        .auto-style7 {
-            height: 23px;
-            width: 89px;
-        }
         .auto-style8 {
             width: 100%;
+        }
+        .auto-style10 {
+        }
+        .auto-style11 {
+            width: 237px;
+        }
+        .auto-style12 {
+            width: 81px;
+        }
+        .auto-style13 {
+            width: 152px;
+        }
+        .auto-style14 {
+            width: 208px;
         }
     </style>
 </head>
@@ -51,43 +42,39 @@
                     </td>
                 </tr>
             </table>
-    <table style="width:100%;">
-            <tr>
-                <td class="auto-style1" colspan="2" style="font-weight: bold; font-size: 20px;">Eliminar Sucursal</td>
-                <td class="auto-style6">
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style1">Ingresar ID sucursal: </td>
-                <td class="auto-style2">
-                    <asp:TextBox ID="txtIdEliminar" runat="server" Width="215px"></asp:TextBox>
-                </td>
-                <td class="auto-style6">
-                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
-                </td>
-                <td>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtIdEliminar" ErrorMessage="Ingrese solo numeros" ForeColor="Red" ValidationExpression="^[0-9,$]*$"></asp:RegularExpressionValidator>
-                </td>
-                <td>
-                    <asp:Label ID="lblMensajeEliminar" runat="server" Text=""></asp:Label>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style3"></td>
-                <td class="auto-style4"></td>
-                <td class="auto-style7"></td>
-                <td class="auto-style5"></td>
-            </tr>
-            <tr>
-                <td class="auto-style3"></td>
-                <td class="auto-style4"></td>
-                <td class="auto-style7"></td>
-                <td class="auto-style5">&nbsp;</td>
-            </tr>
-        </table>
+            <table style="width:100%;">
+    <tr>
+        <td class="auto-style14">Eliminar Sucursal</td>
+        <td class="auto-style11">&nbsp;</td>
+        <td class="auto-style12">&nbsp;</td>
+        <td class="auto-style13">&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="auto-style14">Ingresar ID sucursal: </td>
+        <td class="auto-style11">
+            <asp:TextBox ID="txtIdEliminar" runat="server" Width="215px"></asp:TextBox>
+        </td>
+        <td class="auto-style12">
+            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+        </td>
+        <td class="auto-style13">
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtIdEliminar" ErrorMessage="Ingrese solo numeros" ForeColor="Red" ValidationExpression="^[0-9,$]*$"></asp:RegularExpressionValidator>
+            </td>
+        <td>
+            <asp:Label ID="lblMensajeEliminar" runat="server" Text=""></asp:Label>
+        </td>
+    </tr>
+    <tr>
+        <td class="auto-style10" colspan="5">
+            <asp:GridView ID="gvEliminar" runat="server">
+            </asp:GridView>
+        </td>
+    </tr>
+</table>
         </div>
+
+        
 
     </form>
 </body>
