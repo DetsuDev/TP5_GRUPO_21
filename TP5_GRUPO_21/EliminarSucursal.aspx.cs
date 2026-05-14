@@ -19,21 +19,26 @@ namespace TP5_GRUPO_21
         {
             if (Page.IsValid && !string.IsNullOrEmpty(txtIdEliminar.Text))
             {
+
                 string consulta = "DELETE FROM Sucursal WHERE Id_Sucursal = " + txtIdEliminar.Text;
 
                 int filas = conexion.EjecutarConsulta(consulta);
                 
                 if (filas > 0)
                 {
-                    lblMensajeEliminar.Text = "La sucursal se ha eliminado con éxito";
+                    lblMensajeEliminar.ForeColor = System.Drawing.Color.Green;
+                    lblMensajeEliminar.Text = "La sucursal numero " + txtIdEliminar.Text + " ha sido eliminada";
                 }
                 else
                 {
+                    lblMensajeEliminar.ForeColor = System.Drawing.Color.Red;
                     lblMensajeEliminar.Text = "El ID ingresado no existe";
                 }
 
                 txtIdEliminar.Text = "";
             }
         }
+
+
     }
 }

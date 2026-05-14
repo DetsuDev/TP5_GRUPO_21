@@ -8,62 +8,51 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 100%;
         }
         .auto-style2 {
-            width: 223px;
+            width: 301px;
         }
         .auto-style3 {
-            width: 307px;
+            height: 23px;
         }
         .auto-style4 {
-            width: 100%;
+            width: 301px;
+            height: 23px;
         }
-        .auto-style5{
-            width: 100%;
+        .auto-style5 {
+            height: 23px;
+            width: 211px;
         }
-        body{
-    overflow: hidden;
-
-    /* Firefox */
-    scrollbar-width: none;
-
-    /* IE and Edge */
-    -ms-overflow-style: none;
-}
-
-/* Chrome, Edge Chromium, Safari */
-body::-webkit-scrollbar {
-    display: none;
-}
-
+        .auto-style6 {
+            width: 211px;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="myDiv">
-            <table class="auto-style5">
+            <table style="width:100%;">
                 <tr>
                     <td style="text-align: center;">
-            <asp:HyperLink ID="hlAgregar" runat="server" NavigateUrl="AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
+            <asp:HyperLink ID="hlAgregar0" runat="server" NavigateUrl="AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
                     </td>
                     <td style="text-align: center;">
-            <asp:HyperLink ID="hlListado" runat="server" NavigateUrl="ListarSucursal.aspx">Listado de Sucursales</asp:HyperLink>
+            <asp:HyperLink ID="hlListado0" runat="server" NavigateUrl="ListarSucursal.aspx">Listado de Sucursales</asp:HyperLink>
                     </td>
                     <td style="text-align: center;">
-            <asp:HyperLink ID="hlEliminar" runat="server" NavigateUrl="EliminarSucursal.aspx">Eliminar Sucursal</asp:HyperLink>
+            <asp:HyperLink ID="hlEliminar0" runat="server" NavigateUrl="EliminarSucursal.aspx">Eliminar Sucursal</asp:HyperLink>
                     </td>
                 </tr>
-            </table> 
-            <table class="auto-style1">
+            </table>
+            <table style="width:100%;">
                 <tr>
-                    <td class="auto-style2">Listado de Sucursales</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style5">Listado de Sucursales</td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style3"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Busquedo ingrese Id sucursal</td>
-                    <td class="auto-style3"> 
+                    <td class="auto-style6">Busquedo ingrese Id sucursal</td>
+                    <td class="auto-style2"> 
             <asp:TextBox ID="txtIdSucursal" runat="server"></asp:TextBox>
             <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
             <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" Width="86px" />
@@ -81,35 +70,13 @@ body::-webkit-scrollbar {
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">
+                    <td class="auto-style1" colspan="3">
             <asp:GridView ID="listaSucursales" runat="server" OnSelectedIndexChanged="listaSucursales_SelectedIndexChanged">
             </asp:GridView>
                     </td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
                 </tr>
             </table>
         </div>
     </form>
-</body>
+    </body>
 </html>
