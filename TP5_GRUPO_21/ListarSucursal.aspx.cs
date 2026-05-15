@@ -14,16 +14,21 @@ namespace TP5_GRUPO_21
         {
             if (!IsPostBack)
             {
-                listaSucursales.DataSource = conexion.ObtenerTabla("SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal FROM Sucursal");
+                listaSucursales.DataSource = conexion.ObtenerTabla("SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, DescripcionProvincia, DireccionSucursal FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia");
                 listaSucursales.DataBind();
             }
+        }
+        protected void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+            listaSucursales.DataSource = conexion.ObtenerTabla("SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, DescripcionProvincia, DireccionSucursal FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia");
+            listaSucursales.DataBind();
+            txtIdSucursal.Text = "";
         }
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtIdSucursal.Text))
             {
-                string consulta = "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal FROM Sucursal WHERE Id_Sucursal = " + txtIdSucursal.Text;
-
+                string consulta = "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, DescripcionProvincia, DireccionSucursal FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia WHERE Id_Sucursal = " + txtIdSucursal.Text;
                 listaSucursales.DataSource = conexion.ObtenerTabla(consulta);
                 listaSucursales.DataBind();
 
