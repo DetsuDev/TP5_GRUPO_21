@@ -90,9 +90,17 @@
                     <td class="auto-style9">Provincia:</td>
                     <td class="auto-style10">
                         <asp:DropDownList ID="dpProvincias" runat="server"></asp:DropDownList>
+                        <asp:RequiredFieldValidator 
+                            ID="rfvProvincia" 
+                            runat="server" 
+                            ControlToValidate="dpProvincias" 
+                            InitialValue="0" 
+                            ErrorMessage="Debe seleccionar una provincia" 
+                            ForeColor="Red">
+                        </asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style11">
-                        </td>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style3">Dirección:</td>

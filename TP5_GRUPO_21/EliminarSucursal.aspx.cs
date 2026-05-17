@@ -26,10 +26,12 @@ namespace TP5_GRUPO_21
                 if (filas > 0)
                 {
                     lblMensajeEliminar.Text = "La sucursal se ha eliminado con éxito";
+                    lblMensajeEliminar.ForeColor = System.Drawing.Color.Green;
                 }
                 else
                 {
                     lblMensajeEliminar.Text = "El ID ingresado no existe";
+                    lblMensajeEliminar.ForeColor = System.Drawing.Color.Red;
                 }
 
                 txtIdEliminar.Text = "";

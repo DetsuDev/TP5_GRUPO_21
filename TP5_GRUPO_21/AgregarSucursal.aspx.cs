@@ -21,6 +21,8 @@ namespace TP5_GRUPO_21
                 dpProvincias.DataTextField = "DescripcionProvincia"; 
                 dpProvincias.DataValueField = "Id_Provincia"; 
                 dpProvincias.DataBind();
+
+                dpProvincias.Items.Insert(0, new ListItem("-- Seleccione una Provincia --", "0"));
             }
         }
         
