@@ -66,7 +66,7 @@ body::-webkit-scrollbar {
                     <td class="auto-style3"> 
             <asp:TextBox ID="txtIdSucursal" runat="server"></asp:TextBox>
             <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
-            <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" Width="86px" />
+            <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" Width="86px" OnClick="btnMostrarTodos_Click1" />
 
                     </td>
                     <td>
