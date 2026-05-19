@@ -14,6 +14,15 @@ namespace TP5_GRUPO_21
         {
 
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+            if (!IsPostBack)
+            {
+                ddlProvinciasEliminar.DataSource = conexion.ObtenerTabla("SELECT * FROM Provincia");
+                ddlProvinciasEliminar.DataTextField = "DescripcionProvincia";
+                ddlProvinciasEliminar.DataValueField = "Id_Provincia";
+                ddlProvinciasEliminar.DataBind();
+
+                ddlProvinciasEliminar.Items.Insert(0, new ListItem("-- Seleccione una Provincia --", "0"));
+            }
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -32,6 +41,29 @@ namespace TP5_GRUPO_21
                 {
                     lblMensajeEliminar.Text = "El ID ingresado no existe";
                     lblMensajeEliminar.ForeColor = System.Drawing.Color.Red;
+                }
+
+                txtIdEliminar.Text = "";
+            }
+        }
+
+        protected void btnEliminarNombreProvincia_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid && !string.IsNullOrEmpty(txtEliminarNombreProvincia.Text))
+            {
+                string consulta = "DELETE FROM Sucursal WHERE NombreSucursal = '" + txtEliminarNombreProvincia.Text+"' AND Id_ProvinciaSucursal=" + ddlProvinciasEliminar.SelectedValue;
+
+                int filas = conexion.EjecutarConsulta(consulta);
+
+                if (filas > 0)
+                {
+                    lblEliminarNombreProvincia.Text = "La sucursal se ha eliminado con éxito";
+                    lblEliminarNombreProvincia.ForeColor = System.Drawing.Color.Green;
+                }
+                else
+                {
+                    lblEliminarNombreProvincia.Text = "El Nombre+provincia ingresado no existe";
+                    lblEliminarNombreProvincia.ForeColor = System.Drawing.Color.Red;
                 }
 
                 txtIdEliminar.Text = "";

@@ -70,16 +70,24 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3"></td>
+                    <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4"></td>
                     <td class="auto-style7"></td>
                     <td class="auto-style5"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style3"></td>
-                    <td class="auto-style4"></td>
-                    <td class="auto-style7"></td>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style3">Ingresar Nombre + Provincia</td>
+                    <td class="auto-style4">
+                        <asp:TextBox ID="txtEliminarNombreProvincia" runat="server" ValidationGroup="NombreProvincia" Width="214px"></asp:TextBox>
+                    </td>
+                    <td class="auto-style7">
+                        <asp:DropDownList ID="ddlProvinciasEliminar" runat="server">
+                        </asp:DropDownList>
+                    </td>
+                    <td class="auto-style5">
+                        <asp:Button ID="btnEliminarNombreProvincia" runat="server" OnClick="btnEliminarNombreProvincia_Click" Text="Eliminar" ValidationGroup="NombreProvincia" />
+                        <asp:Label ID="lblEliminarNombreProvincia" runat="server"></asp:Label>
+                    </td>
                 </tr>
             </table>
         </div>
