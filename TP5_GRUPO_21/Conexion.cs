@@ -36,6 +36,16 @@ namespace TP5_GRUPO_21
             return filas;
         }
 
+        public int EjecutarEscalar(string consultaSQL)
+        {
+            SqlConnection sqlConnection = new SqlConnection(cadenaConexion);
+            sqlConnection.Open();
+            SqlCommand sqlCommand = new SqlCommand(consultaSQL, sqlConnection);
+            object resultado = sqlCommand.ExecuteScalar();
+            sqlConnection.Close();
+
+            return resultado != null ? Convert.ToInt32(resultado) : 0;
+        }
 
 
     }

@@ -73,6 +73,7 @@
                     <td class="auto-style6">
                         <asp:TextBox ID="txtNombre" runat="server" Width="250px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese el nombre" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="txtNombre" ErrorMessage="Esta sucursal ya existe" ForeColor="Red" OnServerValidate="CustomValidator1_ServerValidate"></asp:CustomValidator>
                     </td>
                     <td class="auto-style5">
                         &nbsp;</td>

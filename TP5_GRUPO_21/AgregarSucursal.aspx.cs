@@ -28,6 +28,12 @@ namespace TP5_GRUPO_21
         
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
+            Page.Validate();
+
+            if (!Page.IsValid)
+            {
+                return;
+            }
             int filasAfectadas = conexion.EjecutarConsulta("INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) VALUES ('" + txtNombre.Text + "', '" + txtDescripcion.Text + "'," + dpProvincias.SelectedValue + ",'" + txtDireccion.Text + "')");
 
             if (filasAfectadas > 0)
@@ -39,6 +45,15 @@ namespace TP5_GRUPO_21
                 txtDireccion.Text = "";
                 dpProvincias.SelectedIndex = 0;
             }
+        }
+
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            int filas = conexion.EjecutarEscalar(
+                "SELECT COUNT(1) FROM Sucursal WHERE NombreSucursal='" + txtNombre.Text + "' AND Id_ProvinciaSucursal=" +dpProvincias.SelectedValue
+            );
+
+            args.IsValid = filas == 0;
         }
     }
 
